@@ -171,7 +171,8 @@ class Kfda(BaseEstimator, ClassifierMixin, TransformerMixin):
         concatenated_classes = np.concatenate([self.classes_, new_classes])
         concatenated_centroids = np.concatenate(
             [self.clf_.centroids_, new_centroids])
-
+        if isinstance(concatenated_centroids, np.matrix):
+            concatenated_centroids = np.asarray(concatenated_centroids)
         self.clf_.fit(concatenated_centroids, concatenated_classes)
 
         return self
