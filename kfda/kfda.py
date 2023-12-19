@@ -107,7 +107,8 @@ class Kfda(BaseEstimator, ClassifierMixin, TransformerMixin):
 
         # Compute centers
         centroids_ = m_classes @ self.weights_
-
+        if isinstance(centroids_, np.matrix):
+            centroids_ = np.asarray(centroids_)
         # Train nearest centroid classifier
         self.clf_ = NearestCentroid().fit(centroids_, self.classes_)
 

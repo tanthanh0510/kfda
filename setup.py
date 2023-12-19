@@ -4,14 +4,14 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="kfda",
+    name="kfda-new",
     version="0.1.1",
     author="Kawin Nikomborirak",
     author_email="concavemail@gmail.com",
     description="Kernel FDA implementation described in https://arxiv.org/abs/1906.09436",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/concavegit/kfda",
+    url="https://github.com/tanthanh0510/kfda",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
